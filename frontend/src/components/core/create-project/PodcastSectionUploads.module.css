@@ -1,0 +1,6 @@
+.sectionsContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4vh;
+}

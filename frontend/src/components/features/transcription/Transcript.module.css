@@ -1,0 +1,38 @@
+.parent{
+    width: 100%;
+    height: 90%;  
+}
+
+
+.MainContainer{
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+.segmentContainer{
+    display: grid;
+    grid-template-columns: 0.3fr 2.5fr 0.5fr 5fr 0.3fr;
+    grid-template-areas: 
+    ". timestamp . sentence .";
+}
+
+
+.timestamp{
+    grid-area: timestamp;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.transcription{
+    grid-area: sentence;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

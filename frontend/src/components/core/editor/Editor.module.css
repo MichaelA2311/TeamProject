@@ -1,0 +1,65 @@
+.mainContainer{
+    width: 100%;
+    height:100%;
+    display: grid;
+    grid-template-columns: 0.1fr 4fr 0.3fr 3fr 0.1fr;
+    grid-template-rows: 0.3fr 10fr 0.3fr;
+    grid-template-areas:
+    ". . . ."
+    ". video . transcript"
+    ". . . .";
+}
+
+#video{
+    grid-area: video;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+}
+
+#transcript{
+    grid-area: transcript;
+    overflow: scroll;
+}
+
+#transcript h1{
+    position: sticky;
+}
+
+.comp {
+    background-color: #E2E2E2;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.compHeading {
+    font-size: 2em;
+    font-family: "Epilogue", sans-serif;
+    margin: 0;
+}
+
+.player video {
+    border-radius: 10px;
+}
+
+.videoControlsContainer{
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 10vh;
+}
+.videoControlsContainer button, .exportButton{
+    background-color: gray;
+    border-radius: 20px;
+    border: 1px black solid;
+    color: white;
+    height: 6vh;
+    width: 8vw;
+    cursor: pointer;
+}
+
+.waveFormWrapper{
+    width: 100%;
+}

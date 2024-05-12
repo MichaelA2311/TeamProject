@@ -1,0 +1,34 @@
+# Developer tooling
+pylint==2.4.4
+ipython==8.16.1
+
+# Generic packages
+matplotlib==3.8.0
+matplotlib-inline==0.1.6
+numpy==1.26.1
+
+# Audio processing
+audiosegment==0.23.0
+ffmpeg==1.4
+ffmpeg-python==0.2.0
+librosa==0.10.1         # Used to produce waveform grapphs
+scipy==1.12.0           # Reads a file to an array
+
+# Machine learning
+whisper-timestamped==1.14.2
+
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==1.13.1+cpu
+torchaudio==0.13.1+cpu
+
+# API framework & utilities
+flask==3.0.0
+flask_cors==4.0.0
+wrapt==1.11.2
+
+# API database connection
+flask_sqlalchemy==3.1.1
+psycopg2==2.9.9
+
+# MinIO Connection
+boto3==1.34.20

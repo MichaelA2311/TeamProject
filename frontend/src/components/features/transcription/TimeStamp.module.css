@@ -1,0 +1,17 @@
+.component{
+    display:flex;
+    flex-direction: row;
+    gap: 0.5vh;
+}
+
+
+.component button{
+    border-color: black;
+    background-color:gray;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-size:small;
+    color: white;
+    padding: 2px 10px;
+    cursor: pointer;
+}

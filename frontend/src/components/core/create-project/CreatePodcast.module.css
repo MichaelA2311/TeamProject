@@ -1,0 +1,54 @@
+#main {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-template-areas:
+	"fileAdd configurePodcast";
+	font-size: 2vh;
+	margin: 2%;
+}
+
+
+#configurePodcast {
+	grid-area: configurePodcast;
+	margin-left: 5vh;
+}
+
+#configurePodcast > * {
+	margin-bottom: 5vh;
+}
+
+.optionSelect {
+	align-items: center;
+}
+
+
+input[type=checkbox] {
+	vertical-align: middle;
+	float: center;
+}
+
+label {
+	display:block;
+	overflow: hidden;
+}
+
+#fileAdd {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 5vh;
+	margin-right: 5vh;
+}
+
+.projectName {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
+	padding: 1vh;
+	border-radius: 1vh;
+	background-color: #e4e4e4;
+}
+
+
+

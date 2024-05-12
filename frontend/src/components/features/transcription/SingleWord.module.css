@@ -1,0 +1,48 @@
+.word{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.word .wordButton{
+    border: 0px;
+    font-size: 1.3em;
+    cursor: pointer;
+    padding-left: 0px;
+    padding-right: 0px;
+    background-color: gray;
+    color: white;
+}
+
+.word .wordButton:hover{
+    background-color: #3DA3DB;
+    color: #E0E0E0;
+}
+
+.menuWrapper{
+    position: relative;
+    bottom: 2vh;
+    width: 100%;
+}
+
+
+.optionsMenuContainer{
+    position: absolute;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 0.6vw;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.optionsMenuContainer button{
+    cursor: pointer;
+    border: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    background-color: #9de5ff;
+    font-size: 0.8em;
+    border-radius: 20px;
+}

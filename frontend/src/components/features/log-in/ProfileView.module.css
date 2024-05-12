@@ -1,0 +1,41 @@
+.dropDownMenu{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+    border-style: solid;
+    background-color: rgb(39, 223, 255);
+    border-radius: 25px;
+    border-color: rgb(92, 92, 92);
+}
+
+
+.dropDownMenu .profileIcon {
+    width: 5vw;
+    height: 10vh;
+    border-radius: 20px;
+    align-self: center;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+}
+
+
+.dropDownMenu .logOutButton {
+    align-self: center;
+    width: 80%;
+    height: 15%;
+    font-weight: bold;
+    background-color: rgb(66, 94, 255);
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
+}
+
+
+.dropDownMenu .username {
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+}

@@ -1,0 +1,45 @@
+.uploadBlock{
+	background-color: #bbbbbb;
+	border-radius: 2vh;
+}
+
+.uploadBlock p{
+	font-size: medium;
+}
+
+
+.dragFiles {
+	background-color: #e4e4e4;
+	margin-top: 1vh;
+	padding: 1vh;
+	border-style: dashed;
+	border-radius: 1vh;
+}
+
+.dragFiles p {
+	margin-left: 15vh;
+}
+.fileUpload {
+	color: transparent;
+	margin-left: 2vh;
+}
+.dragChild {
+	display: inline-block;
+}
+
+.filesText {
+	border-radius: 1vh;
+	background-color: #e4e4e4;
+	text-align: left;
+}
+.filesText p {
+	padding: 1vh;
+	margin-left: 2vh;
+	font-weight: 600;
+}
+.uploadedFiles {
+	padding-top: 2vh;
+	max-height: 58vh;
+	width: auto;
+	overflow: auto;
+}

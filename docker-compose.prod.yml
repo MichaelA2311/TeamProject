@@ -1,0 +1,91 @@
+version: '3'
+
+services:
+  frontend:
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    restart: always
+    container_name: frontend
+    ports: 
+      - "3000:3000"
+    environment:
+      - REACT_APP_AUTH0_DOMAIN=${CS30_AUTH0_DOMAIN}
+      - REACT_APP_AUTH0_CLIENT_ID=${CS30_AUTH0_CLIENT_ID}
+      - REACT_APP_AUTH0_CALLBACK_URL=http://localhost:3000/
+      - REACT_APP_DEVELOPMENT=true
+      - REACT_APP_FLASK_API_DEVELOP=http://127.0.0.1:5000
+      - REACT_APP_MINIO_USER_NAME=${CS30_MINIO_ROOT_USER}
+      - REACT_APP_MINIO_PASSWORD=${CS30_MINIO_ROOT_PASSWORD}
+      - REACT_APP_MINIO_ENDPOINT=http://127.0.0.1:9000
+    depends_on:
+      - api
+
+  db:
+    build:
+      context: db
+      dockerfile: Dockerfile
+    restart: always
+    container_name: db
+    ports: 
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: ${CS30_DB_NAME}
+      POSTGRES_USER: ${CS30_DB_USER}
+      POSTGRES_PASSWORD: ${CS30_DB_PASSWORD}
+    volumes: 
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - db:/var/lib/postgresql/data
+  
+  api:
+    build:
+      context: api
+      dockerfile: Dockerfile
+    container_name: api
+    network_mode: "host"
+    restart: always
+    command: python3 api/app.py
+    environment:
+      MINIO_ENDPOINT: http://127.0.0.1:9000
+      ACCESS_KEY: ${CS30_MINIO_ROOT_USER}
+      SECRET_KEY: ${CS30_MINIO_ROOT_PASSWORD}
+    volumes:
+      - ./api:/app
+    working_dir: /app
+    depends_on: 
+      - db
+
+  minio:
+    image: quay.io/minio/minio:RELEASE.2024-01-13T07-53-03Z
+    command: server /content
+    hostname: minio
+    container_name: minio
+    volumes:
+      - content:/content
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: ${CS30_MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${CS30_MINIO_ROOT_PASSWORD}
+      MINIO_ADDRESS: ':9000'
+      MINIO_CONSOLE_ADDRESS: ':9001'
+    restart: always
+    
+
+  createbucket:
+    image: minio/mc:latest
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c "
+      mc config host add --api s3v4 mymio http://minio:9000 ${CS30_MINIO_ROOT_USER} ${CS30_MINIO_ROOT_PASSWORD};
+      mc mb mymio/temp/;
+      mc anonymous set public mymio/temp;
+      "
+
+volumes:
+  db:
+    driver: local
+  content:
+    driver: local

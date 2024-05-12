@@ -1,0 +1,21 @@
+
+.options {
+	background-color: #e4e4e460;
+	border-radius: 2vh;
+	padding: 1vh 0vh;
+}
+
+.options:hover {
+	background-color: #e4e4e480;
+}
+
+#selectedOptions {
+	background-color: #e4e4e4;
+}
+
+.options label {
+	font-size: 2vh;
+	margin-bottom: 1vh;
+}
+
+

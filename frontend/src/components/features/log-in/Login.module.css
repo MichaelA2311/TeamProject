@@ -1,0 +1,98 @@
+.loginContainer {
+    max-width: 1670px;
+    width: 100%;
+    height: 100%;
+    display:grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-rows: 1fr 6fr 1fr;
+    grid-template-areas:
+        "header header header"
+        ". login ."
+        "footer footer footer";
+}
+
+
+#login {
+    grid-area: login;
+    background-color: #e4e4e4;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 50px;
+    height: 100%;
+    width: 100%;
+    gap: 1em;
+}
+
+
+
+.logoArea{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.logoArea .logo{
+    width: 100%;
+    height: 75%;
+}
+
+.CredentialsArea{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%;
+    gap: 0px;
+}
+
+
+.CredentialsArea .SignInLabel{
+    font-size: 3em;
+    font-weight: bold;
+    margin-top: 0px;
+    text-align: center;
+    align-self:center;
+    margin-bottom: 5vh;
+}
+
+
+
+.ButtonArea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    gap: 0px;
+}
+
+
+.ButtonArea .SignUpButton {
+    background-color: #02c0fe;
+    font-size: 2em;
+    border-width: 0px;
+    width: 30%;
+    height: 45%;
+    font-weight: bold;
+    border-radius: 25px;
+    margin-bottom: 3vh;
+}
+
+#header {
+    grid-area: header;
+    width: 100%;
+    height: 100%;
+}
+
+#header h1 {
+    font-size: 3em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

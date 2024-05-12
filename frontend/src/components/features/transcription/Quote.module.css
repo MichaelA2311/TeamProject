@@ -1,0 +1,12 @@
+.quoteContainer{
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    column-gap:4px;
+    row-gap: 10px;
+    justify-content: center;
+    background-color: gray;
+    border-radius: 20px;
+    border: 1px solid black;
+    padding: 1% 10%;
+}
